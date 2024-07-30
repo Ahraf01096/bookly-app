@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/style.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
