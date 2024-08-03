@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/widgets/custom_error_message_widget.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
+import '../../manger/newest_books_cubit/newest_books_cubit.dart';
 import 'best_seller_list_view_item.dart';
 
 class BestSellerListView extends StatelessWidget {
@@ -7,14 +11,26 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: 10,
-      itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.symmetric(vertical: 10),
-        child: BooksListViewItem(),
-      ),
+    return BlocBuilder<NewestBooksCubit,NewestBooksState>(
+      builder: (context, state) {
+        if(state is NewestBooksSuccess){
+          return ListView.builder(
+            padding: EdgeInsets.zero,
+            physics:  const NeverScrollableScrollPhysics(),
+            itemCount: state.books.length,
+            itemBuilder: (context, index) =>  Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: BooksListViewItem(bookModel: state.books[index],),
+            ),
+          );
+        }else if(state is NewestBooksFailure){
+
+          return CustomErrorMessageWidget(errMessage: state.errMessage);
+        }else{
+          return const CustomLoadingIndicator();
+        }
+      },
     );
+
   }
 }
