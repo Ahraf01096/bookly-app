@@ -15,7 +15,7 @@ abstract class FeaturedBooksState extends Equatable {
   const FeaturedBooksFailure(this.errMessage);
 }
  class FeaturedBooksSuccess extends FeaturedBooksState {
-  final List<BookModel> books;
+  final BookModel books;
 
   const FeaturedBooksSuccess(this.books);
 

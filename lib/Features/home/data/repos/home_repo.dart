@@ -1,10 +1,14 @@
-import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../../../core/models/book_model.dart';
+
+
 abstract class HomeRepo
 {
- Future<Either<Failure,List<BookModel>>> fetchNewsBooks();
- Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
- Future<Either<Failure,List<BookModel>>> fetchSimilarBooks({required String category});
+ Future<Either<Failure,BookModel>> fetchNewsBooks({required int startIndex});
+ Future<Either<Failure,BookModel >> fetchFeaturedBooks();
+ Future<Either<Failure ,BookModel>> fetchSimilarBooks({required String category});
+ Future<Either<Failure ,BookModel>> fetchSearchBook({required String searchKeyword});
+
 }
