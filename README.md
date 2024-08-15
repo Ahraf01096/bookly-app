@@ -8,12 +8,12 @@ This project aims to use google book apis that get all ebooks in one place.
 
 ## Features
 
-- MVVM architecure using bloc
+- MVVM architecture using bloc
 - Shimmer Loading effect while fetching Data
 - Infinite Scroll (Search & Home Page)
 - Pull to refresh (HomePage)
-- BookDetails with current currecny of your country
-- High perfromance and easy to use
+- BookDetails with current currency of your country
+- High performance and easy to use
 - Animation
   
 #### Accounts:
