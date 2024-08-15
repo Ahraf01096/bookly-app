@@ -22,5 +22,5 @@ This project aims to use google book apis that get all ebooks in one place.
 
 #### App Screens:
 <div>
-<img src="https://github.com/user-attachments/assets/5593f45a-30dd-42fa-b576-dd9ab24cd9ca" width="900">
+<img src="https://github.com/user-attachments/assets/e33db344-86b2-4269-aac9-fc58081493de" width="900">
 </div>
